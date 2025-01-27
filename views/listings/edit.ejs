@@ -1,0 +1,73 @@
+   <% layout("/layouts/boilerplate.ejs") %>
+   <div class="row mt-3">
+    <div class="col-8 offset-2">
+    <h3>Edit your product</h3>
+    <form method="POST" action="/listings/<%= showListing._id %>?_method=PUT" class="needs-validation" novalidate >
+        <div>
+            <lable for="title" class="form-label"> Enter Title</lable>
+            <input name="listing[title]" value="<%= showListing.title %>" type="text" class = "form-control" required >
+
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter title.
+              </div>
+
+        </div>
+        
+        <div>
+            <lable for="image" class="form-label"> Enter Image</lable>
+            <textarea name="listing[image]"  type="text" class="form-control" required><%= showListing.image %></textarea>
+
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter valid image_URL.
+              </div>
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <lable for="Capacity" class="form-label"> Enter Capacity</lable>
+                <input name="listing[Capacity]" value="<%= showListing.Capacity %>" type="text" class="form-control" required>
+
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter product Capacity.
+                  </div>
+            </div>
+            
+            <div class="mb-3 col-md-8">
+                <lable for="Material" class="form-label"> Enter Material</lable>
+                <input name="listing[Material]" value="<%= showListing.Material %>"type="text" class="form-control" required>
+
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please enter product Material.
+                  </div>
+            </div>
+        </div>
+       
+        
+        <div>
+            <lable for="Price" class="form-label"> Enter Price</lable>
+            <input name="listing[Price]" value="<%= showListing.Price %>" type="number"  class="form-control" required>
+
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter product Price.
+              </div>
+        </div>
+        
+        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+    </form>
+</div>
+</div>
